@@ -73,7 +73,13 @@ router.post(
 router.post(
   '/logout',
   requestHandler((req, res) => {
-    res.cookie('myAssocToken', '', { expires: new Date(0), httpOnly: true });
+    res.cookie('myAssocToken', '', {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'None',
+      path: '/',
+      expires: new Date(0),
+    });
   })
 );
 
