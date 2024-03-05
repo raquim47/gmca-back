@@ -6,8 +6,14 @@ module.exports = (res, user) => {
     email: user.email,
     username: user.username,
     isAdmin: user.isAdmin,
-    phone : user.phone,
+    phone: user.phone,
   };
   const token = jwt.sign(payload, process.env.JWT_SECRET);
-  res.cookie('myAssocToken', token, { httpOnly: true });
+  res.cookie('myAssocToken', token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'None',
+    domain: 'gmca.vercel.app',
+    path: '/',
+  });
 };
