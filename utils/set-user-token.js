@@ -13,7 +13,6 @@ module.exports = (res, user) => {
     httpOnly: true,
     secure: true,
     sameSite: 'None',
-    domain: 'gmca.vercel.app',
     path: '/',
   });
 };
