@@ -11,6 +11,7 @@ const throwError = require('../utils/throw-error');
 router.get(
   '/me',
   requestHandler(async (req) => {
+    console.log('/me request - req.user: ', req.user);
     if (req.user) {
       const user = await User.findById(req.user.userId);
       if (!user) throwError(ERROR.USER_NOT_FOUND, 404);
