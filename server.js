@@ -10,7 +10,7 @@ const usersRoutes = require('./routes/users');
 const postsRoutes = require('./routes/posts');
 
 const corsOptions = {
-  origin: 'http://localhost:3000', 
+  origin: 'https://gmca.vercel.app/', 
   credentials: true, 
 };
 
