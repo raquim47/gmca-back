@@ -32,6 +32,6 @@ mongoose
   .then(() => console.log('DB 연결'))
   .catch((err) => console.error('Mongoose error:', err));
 
-server.listen(3030, () => {
+server.listen(process.env.PORT || 3030, () => {
   console.log(`서버 실행, 포트 : ${process.env.PORT}`);
 });
