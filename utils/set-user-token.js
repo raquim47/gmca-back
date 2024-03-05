@@ -12,7 +12,7 @@ module.exports = (res, user) => {
   res.cookie('myAssocToken', token, {
     httpOnly: true,
     secure: true,
-    sameSite: 'Lax',
+    sameSite: 'Strict',
     path: '/',
   });
 };
