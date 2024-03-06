@@ -10,7 +10,8 @@ const usersRoutes = require('./routes/users');
 const postsRoutes = require('./routes/posts');
 
 const corsOptions = {
-  origin: 'https://gmca.vercel.app', 
+  // origin: 'https://gmca.vercel.app', 
+  origin : 'http://localhost:3000',
   credentials: true, 
 };
 
@@ -33,5 +34,5 @@ mongoose
   .catch((err) => console.error('Mongoose error:', err));
 
 server.listen(process.env.PORT || 3030, () => {
-  console.log(`서버 실행, 포트 : ${process.env.PORT}`);
+  console.log(`서버 실행, 포트 : ${process.env.PORT || 3030}`);
 });
