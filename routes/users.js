@@ -74,9 +74,9 @@ router.post(
   requestHandler((req, res) => {
     res.cookie('myAssocToken', '', {
       httpOnly: true,
-      // secure: true,
-      // sameSite: 'None',
-      // path: '/',
+      secure: true,
+      sameSite: 'None',
+      path: '/',
       expires: new Date(0),
     });
   })

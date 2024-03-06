@@ -11,8 +11,8 @@ module.exports = (res, user) => {
   const token = jwt.sign(payload, process.env.JWT_SECRET);
   res.cookie('myAssocToken', token, {
     httpOnly: true,
-    // secure: true,
-    // sameSite: 'None',
-    // path: '/',
+    secure: true,
+    sameSite: 'None',
+    path: '/',
   });
 };
